@@ -1,34 +1,32 @@
 #include <iostream>
 #include <string>
-#include <cmath>
-
+#include <vector>
 using namespace std;
 
-bool is4digits(string);
+
+
 int main()
 {
-	string PIN;
-	cout << "Enter a 4 digit PIN number: ";
-	cin >> PIN;
+ 
+	vector<string> list;
 
-	if (is4digits(PIN) == true)
+	cout << "Please enter the names, press Q to quit;" << endl;
+
+	string name = "x";
+	
+	while (name != "Q")
 	{
-		cout << "PIN Accepted.";
+		cin >> name;
+		list.push_back(name);
 	}
-	else
+
+	list.pop_back();
+
+	cout << "You have entered " << list.size() << " names:" << endl;
+
+	for (int i = 0; i < list.size(); i++)
 	{
-		cout << "PIN Denied.";
+		cout << list[i] << endl;
 	}
-	cout << endl;
 	system("pause");
-}
-
-bool is4digits(string pin)
-{
-	bool status = 1;
-	if (pin.length() !=4)
-	{
-		status = 0;
-	}
-	return status;
 }
