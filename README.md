@@ -1,2 +1,2 @@
 # learning
-Trying out Struct in C++
+Learning vectors
