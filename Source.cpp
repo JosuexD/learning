@@ -1,34 +1,34 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
+bool is4digits(string);
 int main()
 {
+	string PIN;
+	cout << "Enter a 4 digit PIN number: ";
+	cin >> PIN;
 
-	
-struct StudentInfo
+	if (is4digits(PIN) == true)
 	{
-		string name;
-		double average;
-		char letterGrade;
-	};
-struct Address
-{
-	int streetNum;
-	string streetName;
-
-};
-	StudentInfo Student1;
-
-	Student1.name = "Josue";
-	Student1.average = 100;
-	Student1.letterGrade = 'A';
-
-	Address Myadress;
-
-	Myadress.streetName = 50;
-	Myadress.streetName = "University";
-	cout << Myadress.streetName << endl;
+		cout << "PIN Accepted.";
+	}
+	else
+	{
+		cout << "PIN Denied.";
+	}
+	cout << endl;
 	system("pause");
+}
+
+bool is4digits(string pin)
+{
+	bool status = 1;
+	if (pin.length() !=4)
+	{
+		status = 0;
+	}
+	return status;
 }
